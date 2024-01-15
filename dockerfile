@@ -19,7 +19,7 @@ RUN wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-s
 # Ejecuta el análisis de SonarQube
 RUN sonar-scanner/bin/sonar-scanner
 
-# Expone el puerto 8000 para que pueda ser accedido desde fuera del contenedor
+# Expone el puerto 3005 para que pueda ser accedido desde fuera del contenedor
 EXPOSE 3005
 
 COPY ./testjenkins /app
