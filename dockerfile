@@ -17,7 +17,7 @@ RUN wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-s
     && rm sonar-scanner.zip
 
 # Ejecuta el análisis de SonarQube
-RUN sonar-scanner/bin/sonar-scanner
+RUN sonar-scanner/bin/sonar-scanner -X
 
 # Expone el puerto 3005 para que pueda ser accedido desde fuera del contenedor
 EXPOSE 3005
