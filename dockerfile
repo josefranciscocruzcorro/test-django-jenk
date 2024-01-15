@@ -10,6 +10,15 @@ COPY . /app
 # Instala las dependencias del proyecto
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Instala el escáner de SonarQube
+RUN wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip -O sonar-scanner.zip \
+    && unzip sonar-scanner.zip \
+    && mv sonar-scanner-4.6.2.2472-linux sonar-scanner \
+    && rm sonar-scanner.zip
+
+# Ejecuta el análisis de SonarQube
+RUN sonar-scanner/bin/sonar-scanner
+
 # Expone el puerto 8000 para que pueda ser accedido desde fuera del contenedor
 EXPOSE 3005
 
