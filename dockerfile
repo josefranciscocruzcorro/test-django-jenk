@@ -13,5 +13,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Expone el puerto 8000 para que pueda ser accedido desde fuera del contenedor
 EXPOSE 3005
 
+COPY ./testjenkins /app
+
 # Comando para ejecutar la aplicación cuando el contenedor se inicie
 CMD ["python", "manage.py", "runserver", "0.0.0.0:3005"]
