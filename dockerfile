@@ -11,7 +11,7 @@ COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Instala el escáner de SonarQube
-RUN wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip -O sonar-scanner.zip \
+RUN wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.3.0.82913.zip -O sonar-scanner.zip \
     && unzip sonar-scanner.zip \
     && mv sonar-scanner-4.6.2.2472-linux sonar-scanner \
     && rm sonar-scanner.zip
